@@ -1,0 +1,62 @@
+add()	    adds an element to a list
+addAll()	adds all elements of one list to another
+get()	    helps to randomly access elements from lists
+iterator()	returns iterator object that can be used to sequentially access elements of lists
+set()	    changes elements of lists
+remove()	removes an element from the list
+removeAll()	removes all the elements from the list
+clear()	    removes all the elements from the list (more efficient than removeAll())
+size()	    returns the length of lists
+toArray()	converts a list into an array
+contains()	returns true if a list contains specific element
+
+
+The Queue interface includes all the methods of the Collection interface. It is because Collection is the super interface of Queue.
+
+Some of the commonly used methods of the Queue interface are:
+
+=> add() - Inserts the specified element into the queue. If the task is successful, add() returns true, if not it throws an exception.
+
+=> offer() - Inserts the specified element into the queue. If the task is successful, offer() returns true, if not it returns false.
+
+=> element() - Returns the head of the queue. Throws an exception if the queue is empty.
+
+=> peek() - Returns the head of the queue. Returns null if the queue is empty.
+
+=> remove() - Returns and removes the head of the queue. Throws an exception if the queue is empty.
+
+=> poll() - Returns and removes the head of the queue. Returns null if the queue is empty.
+
+
+
+
+
+
+
+Since Deque extends the Queue interface, it inherits all the methods of the Queue interface.
+
+Besides methods available in the Queue interface, the Deque interface also includes the following methods:
+
+=> addFirst() - Adds the specified element at the beginning of the deque. Throws an exception if the deque is full.
+
+=> addLast() - Adds the specified element at the end of the deque. Throws an exception if the deque is full.
+
+=> offerFirst() - Adds the specified element at the beginning of the deque. Returns false if the deque is full.
+
+=> offerLast() - Adds the specified element at the end of the deque. Returns false if the deque is full.
+
+=> getFirst() - Returns the first element of the deque. Throws an exception if the deque is empty.
+
+=> getLast() - Returns the last element of the deque. Throws an exception if the deque is empty.
+
+=> peekFirst() - Returns the first element of the deque. Returns null if the deque is empty.
+
+=> peekLast() - Returns the last element of the deque. Returns null if the deque is empty.
+
+=> removeFirst() - Returns and removes the first element of the deque. Throws an exception if the deque is empty.
+
+=> removeLast() - Returns and removes the last element of the deque. Throws an exception if the deque is empty.
+
+=> pollFirst() - Returns and removes the first element of the deque. Returns null if the deque is empty.
+
+=> pollLast() - Returns and removes the last element of the deque. Returns null if the deque is empty.
