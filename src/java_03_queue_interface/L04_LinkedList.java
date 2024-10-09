@@ -19,13 +19,13 @@ public class L04_LinkedList {
         // methods provided by other interfaces. That is, animals1 cannot use methods
         // specific to Queue and Deque interfaces.
 
-        // create linkedlist using List
+        // Creating linkedlist as a List
         List<String> items1 = new LinkedList<>();
 
-        // creating linkedlist using Queue
+        // Creating linkedlist as a Queue
         Queue<String> items2 = new LinkedList<>();
 
-        // creating linkedlist using Deque
+        // Creating linkedlist as a Deque
         Deque<String> items3 = new LinkedList<>();
 
         System.out.println(items0);

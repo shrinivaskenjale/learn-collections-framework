@@ -15,7 +15,7 @@ public class L01_Iterator {
         // iterator(): Returns the iterator.
         Iterator<Integer> it = numbers.iterator();
 
-        // hasNext(): Check if iteration has more elements.
+        // hasNext(): Check if iterator has more elements.
         while (it.hasNext()) {
 
             // next(): Returns the next element in the iteration.
@@ -40,7 +40,7 @@ public class L01_Iterator {
 
 // Interface chain: List extends Collection extends Iterable
 // Iterable interface has only one method iterator(). This is why we are able to
-// iterate on different types of collections
+// iterate on different types of collections.
 
 // Initially, iterator points before the first element in the collection.
 

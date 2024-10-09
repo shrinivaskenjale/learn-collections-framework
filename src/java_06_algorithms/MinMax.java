@@ -21,7 +21,8 @@ public class MinMax {
 }
 
 /*
- * Elements of the collection should implement Comparable interface.
+ * Elements of the collection should implement Comparable interface. Or you can
+ * pass comparator as second argument.
  * 
  * Built-in types in java implement Comparable interface.
  */

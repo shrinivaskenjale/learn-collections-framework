@@ -255,7 +255,7 @@ class Person {
  * 
  * 
  * =====================================
- * Hashmap vs LinkedHashMap vs TreeMap
+ * HashMap vs LinkedHashMap vs TreeMap
  * =====================================
  * 
  * Hashmap is unordered.

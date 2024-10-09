@@ -54,6 +54,8 @@ public class L01_CollectionsFramework {
  * The framework includes other interfaces as well: Map and Iterator. These
  * interfaces may also have subinterfaces.
  * 
+ * Note: Iterable is not considered as the root of collections framework.
+ * 
  * ==========================================
  * Subinterfaces of the Collection Interface
  * ==========================================

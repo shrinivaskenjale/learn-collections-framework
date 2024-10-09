@@ -17,7 +17,7 @@ public class L02_ArrayList {
         List<String> names = new ArrayList<>();
 
         // Creating new arraylist from other collection.
-        // new ArrayList<>(collection implementation)
+        // new ArrayList<>(Collection implementation)
 
         // =============
         // Add elements
@@ -39,10 +39,10 @@ public class L02_ArrayList {
         names2.add("Sourabh");
         names2.add("Vedant");
 
-        // addAll(collection-implementation): Add elements of collection to the end
+        // addAll(Collection-implementation): Add elements of collection to the end
         names.addAll(names2);
 
-        // addAll(index, collection-implementation): Add elements of the collection at
+        // addAll(index, Collection-implementation): Add elements of the collection at
         // given index
 
         // collection-implementation can be List, Queue or Set implementations.
@@ -112,7 +112,7 @@ public class L02_ArrayList {
 
         System.out.println(names);
 
-        // remove(object): Remove object
+        // remove(object): Remove first occurence of object
         names.remove(String.valueOf("Shyam"));
 
         System.out.println(names);
@@ -123,7 +123,7 @@ public class L02_ArrayList {
         // clear(): Empty the list
         names.clear();
 
-        // removeAll(collection implementation): Removes all elements from the list that
+        // removeAll(Collection implementation): Removes all elements from the list that
         // are present in the given collection.
 
         // removeXXX() methods return true if any element was removed else false.

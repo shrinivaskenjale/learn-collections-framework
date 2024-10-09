@@ -49,7 +49,7 @@ public class L01_Map {
  * Interfaces that extend Map
  * ============================
  * 
- * The Map interface is also extended by these subinterfaces:
+ * The Map interface is extended by these subinterfaces:
  * 
  * => SortedMap
  * => NavigableMap

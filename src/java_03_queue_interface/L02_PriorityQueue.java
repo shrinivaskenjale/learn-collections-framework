@@ -118,8 +118,8 @@ public class L02_PriorityQueue {
  * 
  * For custom objects we have 2 options:
  * a. Comparator interface
- * - Pass instance of subclass of Comparator interface as an argument to the
- * PriorityQueue constructor.
+ * - Pass instance the implementation of Comparator interface as an argument to
+ * the PriorityQueue constructor.
  * 
  * b. Comparable interface
  * - Implement the Comparable interface in the class of custom objects.

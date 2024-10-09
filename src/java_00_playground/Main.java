@@ -1,16 +1,19 @@
 package java_00_playground;
 
-import java.util.Arrays;
-import java.util.HashSet;
+import java.util.*;
 
 /**
  * Main
  */
 public class Main {
     public static void main(String[] args) {
-        HashSet<Integer> set = new HashSet<>(Arrays.asList(1, 2, 3, 3, 4, 2));
 
-        set.add(null);
-        System.out.println(set);
+        Map<String, Integer> map = new HashMap<>();
+
+        map.put("one", 1);
+        map.put("two", 2);
+        map.put("three", 3);
+
+        System.out.println(map.entrySet());
     }
 }

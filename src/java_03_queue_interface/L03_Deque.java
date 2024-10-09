@@ -48,8 +48,8 @@ public class L03_Deque {
  * ArrayDeque Vs. LinkedList Class
  * =================================
  * 
- * Both ArrayDeque and Java LinkedList implements the Deque interface. However,
- * there exist some differences between them.
+ * Both ArrayDeque and LinkedList classes implement the Deque interface.
+ * However, there exist some differences between them.
  * 
  * => LinkedList supports null elements, whereas ArrayDeque doesn't.
  * 
@@ -57,7 +57,7 @@ public class L03_Deque {
  * LinkedList requires more storage than ArrayDeque.
  * 
  * => If you are implementing the queue or the deque data structure, an
- * ArrayDeque is likely to faster than a LinkedList.
+ * ArrayDeque is little faster than a LinkedList.
  * 
  * ==================
  * Methods of Deque

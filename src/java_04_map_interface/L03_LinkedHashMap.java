@@ -38,7 +38,7 @@ public class L03_LinkedHashMap {
  * LinkedHashMap Vs. HashMap
  * ===========================
  * 
- * Both the LinkedHashMap and the HashMap implements the Map interface. However,
+ * Both the LinkedHashMap and the HashMap implement the Map interface. However,
  * there exist some differences between them.
  * 
  * => LinkedHashMap maintains a doubly-linked list internally. Due to this, it
