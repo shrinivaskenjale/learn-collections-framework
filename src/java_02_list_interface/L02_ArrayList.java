@@ -14,6 +14,10 @@ public class L02_ArrayList {
         // that will be stored in it using type parameter.
         // Use wrapper classes for primitive types
 
+        ArrayList<Integer> numbers = new ArrayList<>();
+
+        numbers.add(Integer.valueOf(43));
+
         List<String> names = new ArrayList<>();
 
         // Creating new arraylist from other collection.
