@@ -87,66 +87,67 @@ public class L02_PriorityQueue {
 }
 
 /*
- * 
- * =====================
- * PriorityQueue class
- * =====================
- * 
- * The PriorityQueue class provides the functionality of the heap data
- * structure.
- * 
- * It implements the Queue interface.
- * 
- * Unlike normal queues, priority queue elements are retrieved in sorted order.
- * 
- * Suppose, we want to retrieve elements in the ascending order. In this case,
- * the head of the priority queue will be the smallest element. Once this
- * element is retrieved, the next smallest element will be the head of the
- * queue.
- * 
- * It is important to note that the elements of a priority queue may not be
- * sorted. However, elements are always retrieved in sorted order.
- * 
- * The PriorityQueue class provides the implementation of all the methods
- * present in the Queue interface.
- * 
- * 
- * 
- * ==================================
- * Priority Queue of custom objects
- * ==================================
- * 
- * For custom objects we have 2 options:
- * a. Comparator interface
- * - Pass instance the implementation of Comparator interface as an argument to
- * the PriorityQueue constructor.
- * 
- * b. Comparable interface
- * - Implement the Comparable interface in the class of custom objects.
- * 
- * 
- * =========================
- * PriorityQueue Comparator
- * =========================
- * 
- * Priority queue elements are retrieved in the natural order (ascending order).
- * However, we can customize this ordering.
- * 
- * For this, we need to create our own comparator class that implements the
- * Comparator interface.
- * 
- * Pass this comparator as first argument to constructor of PriorityQueue when
- * creating.
- * 
- * PriorityQueue<Integer> numbers = new PriorityQueue<>(new CustomComparator());
- * 
- * 
- * ============================
- * Comparator.reverseOrder()
- * ============================
- * 
- * Returns a comparator that imposes the reverse of the natural ordering on
- * Comparable objects.
- * 
- * 
+
+=====================
+PriorityQueue class
+=====================
+
+The PriorityQueue class provides the functionality of the heap data
+structure.
+
+It implements the Queue interface.
+
+Unlike normal queues, priority queue elements are retrieved in sorted order.
+
+Suppose, we want to retrieve elements in the ascending order. In this case,
+the head of the priority queue will be the smallest element. Once this
+element is retrieved, the next smallest element will be the head of the
+queue.
+
+It is important to note that the elements of a priority queue may not be
+sorted. However, elements are always retrieved in sorted order.
+
+The PriorityQueue class provides the implementation of all the methods
+present in the Queue interface.
+
+
+
+==================================
+Priority Queue of custom objects
+==================================
+
+For custom objects we have 2 options:
+
+a. Comparator interface
+- Pass instance the implementation of Comparator interface as an argument to
+the PriorityQueue constructor.
+
+b. Comparable interface
+- Implement the Comparable interface in the class of custom objects.
+
+
+=========================
+PriorityQueue Comparator
+=========================
+
+Priority queue elements are retrieved in the natural order (ascending order).
+However, we can customize this ordering.
+
+For this, we need to create our own comparator class that implements the
+Comparator interface.
+
+Pass this comparator as first argument to constructor of PriorityQueue when
+creating.
+
+PriorityQueue<Integer> numbers = new PriorityQueue<>(new CustomComparator());
+
+
+============================
+Comparator.reverseOrder()
+============================
+
+Returns a comparator that imposes the reverse of the natural ordering on
+Comparable objects.
+
+
  */

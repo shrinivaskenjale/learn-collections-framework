@@ -3,7 +3,7 @@ package java_06_algorithms;
 import java.util.ArrayList;
 import java.util.Collections;
 
-public class MinMax {
+public class L02_MinMax {
     public static void main(String[] args) {
         ArrayList<Integer> numbers = new ArrayList<>();
         numbers.add(3);
@@ -21,8 +21,10 @@ public class MinMax {
 }
 
 /*
- * Elements of the collection should implement Comparable interface. Or you can
- * pass comparator as second argument.
- * 
- * Built-in types in java implement Comparable interface.
+
+We can pass any Collection (i.e., any class that implements the Collection interface),
+provided that:
+A. The elements are comparable (i.e., implement the Comparable interface),
+OR
+B. You provide a custom Comparator.
  */

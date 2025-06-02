@@ -16,7 +16,7 @@ public class L02_ArrayList {
 
         ArrayList<Integer> numbers = new ArrayList<>();
 
-        numbers.add(Integer.valueOf(43));
+        numbers.add(43);
 
         List<String> names = new ArrayList<>();
 
@@ -90,7 +90,7 @@ public class L02_ArrayList {
         // lastIndexOf(element): Get last index of element
 
         // ======================
-        // Iteratre on the list
+        // Iterate on the list
         // ======================
 
         // For loop
@@ -116,8 +116,8 @@ public class L02_ArrayList {
 
         System.out.println(names);
 
-        // remove(object): Remove first occurence of object
-        names.remove(String.valueOf("Shyam"));
+        // remove(object): Remove first occurrence of object
+        names.remove("Shyam");
 
         System.out.println(names);
 
@@ -190,18 +190,19 @@ public class L02_ArrayList {
 }
 
 /*
- * ArrayList implements List interface
- * 
- * Arraylist uses array BTS.
- * 
- * We use the ArrayList class to implement the functionality of
- * resizable-arrays.
- * 
- * Unlike arrays, arraylists can automatically adjust their capacity when we add
- * or remove elements from them. Hence, arraylists are also known as dynamic
- * arrays.
- * 
- * Removing the elements from the end of the arraylist is fast but from the
- * start it's slow. This is because elements after the deleted item are shifted
- * backwards to fill the gap.
+ArrayList implements List interface
+
+Arraylist uses array BTS.
+
+We use the ArrayList class to implement the functionality of
+resizable-arrays.
+
+Unlike arrays, arraylists can automatically adjust their capacity when we add
+or remove elements from them. Hence, arraylists are also known as dynamic
+arrays.
+
+Removing the elements from the end of the arraylist is fast but from the
+start it's slow. This is because elements after the deleted item are shifted
+backwards to fill the gap.
+
  */

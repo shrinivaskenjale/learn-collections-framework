@@ -230,52 +230,50 @@ class Person {
 }
 
 /*
- * ===============
- * HashMap class
- * ===============
- * 
- * The HashMap class of the Java collections framework provides the
- * functionality of the hash table data structure.
- * 
- * It stores elements in key/value pairs. Here, keys are unique identifiers used
- * to associate each value on a map.
- * 
- * The HashMap class implements the Map interface.
- * 
- * 
- * 
- * 
- * =================================================
- * HashMap and LinkedHashMap of custom object keys
- * =================================================
- * 
- * Override both equals() and hashCode() in the class of the objects that are
- * keys. Both methods should depend on same fields. These methods help to find
- * the right bucket for the key.
- * 
- * 
- * =====================================
- * HashMap vs LinkedHashMap vs TreeMap
- * =====================================
- * 
- * Hashmap is unordered.
- * LinkedHashMap maintains insertion order
- * TreeMap maintains natural order
- * 
- * ==========================
- * Capacity and load factor
- * ==========================
- * 
- * While creating a hashmap, we can include optional parameters: capacity and
- * load factor. For example,
- * 
- * HashMap<K, V> numbers = new HashMap<>(8, 0.6f);
- * 
- * Here,
- * 8 (capacity is 8) - This means it can store 8 entries.
- * 0.6f (load factor is 0.6) - This means whenever our hash table is filled by
- * 60%, the entries are moved to a new hash table double the size of the
- * original hash table.
- * If the optional parameters not used, then the default capacity will be 16 and
- * the default load factor will be 0.75.
+===============
+HashMap class
+===============
+
+The HashMap class of the Java collections framework provides the
+functionality of the hash table data structure.
+
+It stores elements in key/value pairs. Here, keys are unique identifiers used
+to associate each value on a map.
+
+The HashMap class implements the Map interface.
+
+=================================================
+HashMap and LinkedHashMap of custom object keys
+=================================================
+
+Override both equals() and hashCode() in the class of the objects that are
+keys. Both methods should depend on same fields. These methods help to find
+the right bucket for the key.
+
+
+=====================================
+HashMap vs LinkedHashMap vs TreeMap
+=====================================
+
+Hashmap is unordered.
+LinkedHashMap maintains insertion order
+TreeMap maintains natural order
+
+==========================
+Capacity and load factor
+==========================
+
+While creating a hashmap, we can include optional parameters: capacity and
+load factor. For example,
+
+HashMap<K, V> numbers = new HashMap<>(8, 0.6f);
+
+Here,
+8 (capacity is 8) - This means it can store 8 entries.
+0.6f (load factor is 0.6) - This means whenever our hash table is filled by
+60%, the entries are moved to a new hash table double the size of the
+original hash table.
+If the optional parameters not used, then the default capacity will be 16 and
+the default load factor will be 0.75.
+
  */

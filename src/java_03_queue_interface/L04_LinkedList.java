@@ -16,8 +16,7 @@ public class L04_LinkedList {
 
         // We can also create a LinkedList using interfaces in Java.
         // Here, if the LinkedList is created using one interface, then we cannot use
-        // methods provided by other interfaces. That is, animals1 cannot use methods
-        // specific to Queue and Deque interfaces.
+        // methods provided by other interfaces.
 
         // Creating linkedlist as a List
         List<String> items1 = new LinkedList<>();
@@ -37,20 +36,20 @@ public class L04_LinkedList {
 }
 
 /*
- * ====================
- * LinkedList class
- * ====================
- * 
- * LinkedList implements List, Deque (sub-interface of Queue) interfaces.
- * 
- * The LinkedList class of the Java collections framework provides the
- * functionality of the doubly linked list data structure.
- * 
- * Each element in a linked list is known as a node. It consists of 3 fields:
- * => Prev - stores an address of the previous element in the list. It is null
- * for the first element
- * => Next - stores an address of the next element in the list. It is null for
- * the last element
- * => Data - stores the actual data
- * 
+====================
+LinkedList class
+====================
+
+LinkedList implements List, Deque (sub-interface of Queue) interfaces.
+
+The LinkedList class of the Java collections framework provides the
+functionality of the doubly linked list data structure.
+
+Each element in a linked list is known as a node. It consists of 3 fields:
+=> Prev - stores an address of the previous element in the list. It is null
+for the first element
+=> Next - stores an address of the next element in the list. It is null for
+the last element
+=> Data - stores the actual data
+
  */

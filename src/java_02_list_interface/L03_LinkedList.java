@@ -28,19 +28,20 @@ public class L03_LinkedList {
 }
 
 /*
- * LinkedList implements List and Deque (sub-interface of Queue) interfaces.
- * 
- * https://www.javatpoint.com/difference-between-arraylist-and-linkedlist
- * 
- * It can be used as list, queue and deque since it implements both List and
- * Deque interfaces.
- * 
- * Insertion or deletion near beginning or middle of the linkedlist is faster
- * compared to arraylist.
- * So, if you want to do insertion or deletion close to the end of the list then
- * use arraylist else linkedlist.
- * 
- * For accessing elements by index, ArrayList is faster because it provides
- * constant time access.
- * For traversal without indexing, both have similar performance.
+LinkedList implements List and Deque (sub-interface of Queue) interfaces.
+
+https://www.javatpoint.com/difference-between-arraylist-and-linkedlist
+
+It can be used as list, queue and deque since it implements both List and
+Deque interfaces.
+
+Insertion or deletion near beginning or middle of the linkedlist is faster
+compared to arraylist.
+So, if you want to do insertion or deletion close to the end of the list then
+use arraylist else linkedlist.
+
+For accessing elements by index, ArrayList is faster because it provides
+constant time access.
+For traversal without indexing, both have similar performance.
+
  */

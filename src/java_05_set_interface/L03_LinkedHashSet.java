@@ -9,10 +9,13 @@ public class L03_LinkedHashSet {
         // Create a LinkedHashSet
         // ========================
 
+        // Create an empty set
         LinkedHashSet<Integer> set = new LinkedHashSet<>();
+        System.out.println(set);
 
         // Create a set from elements of other collection.
-        // Set<String> set2 = new LinkedHashSet<>(collection);
+        Set<Integer> set2 = new LinkedHashSet<>(Arrays.asList(1, 2, 3, 3, 4, 2));
+        System.out.println(set2);
 
         // All methods are same as HashSet.
 
@@ -22,7 +25,6 @@ public class L03_LinkedHashSet {
         set.add(2);
         set.add(4);
         set.add(9);
-
         System.out.println(set);
 
         // Order is same as insertion
@@ -34,54 +36,55 @@ public class L03_LinkedHashSet {
 }
 
 /*
- * ======================
- * LinkedHashSet class
- * ======================
- * 
- * The LinkedHashSet class of the Java collections framework provides
- * functionalities of both the hashtable and the linked list data structure.
- * 
- * It implements the Set interface.
- * 
- * Elements of LinkedHashSet are stored in hash tables similar to HashSet.
- * 
- * However, linked hash sets maintain a doubly-linked list internally for all of
- * its elements. The linked list defines the order in which elements are
- * inserted in hash tables.
- * 
- * 
- * ============================
- * LinkedHashSet Vs. HashSet
- * ============================
- * 
- * Both LinkedHashSet and HashSet implements the Set interface. However, there
- * exist some differences between them.
- * 
- * => LinkedHashSet maintains a linked list internally. Due to this, it
- * maintains the insertion order of its elements.
- * 
- * => The LinkedHashSet class requires more storage than HashSet. This is
- * because LinkedHashSet maintains linked lists internally.
- * 
- * => The performance of LinkedHashSet is slower than HashSet. It is because of
- * linked lists present in LinkedHashSet.
- * 
- * ============================
- * LinkedHashSet Vs. TreeSet
- * ============================
- * 
- * 
- * Here are the major differences between LinkedHashSet and TreeSet:
- * 
- * => The TreeSet class implements the SortedSet interface. That's why elements
- * in a tree set are sorted. However, the LinkedHashSet class only maintains the
- * insertion order of its elements.
- * 
- * => A TreeSet is usually slower than a LinkedHashSet. It is because whenever
- * an element is added to a TreeSet, it has to perform the sorting operation.
- * 
- * => LinkedHashSet allows the insertion of null values. However, we cannot
- * insert a null value to TreeSet.
- * 
- * 
+======================
+LinkedHashSet Class
+======================
+
+The LinkedHashSet class in the Java Collections Framework combines the features
+of both a hash table and a linked list.
+
+It implements the Set interface and stores unique elements.
+
+Like HashSet, elements are stored in a hash table for efficient access.
+
+Additionally, LinkedHashSet maintains a doubly-linked list that preserves the
+insertion order of elements.
+
+This linked list ensures that when you iterate over a LinkedHashSet, the elements
+are returned in the order in which they were added.
+
+
+============================
+LinkedHashSet vs. HashSet
+============================
+
+Both LinkedHashSet and HashSet implement the Set interface, but there are some key
+differences between them:
+
+=> LinkedHashSet maintains a linked list internally, which preserves the insertion
+order of elements.
+
+=> LinkedHashSet requires more memory than HashSet because of the additional linked
+list used to maintain order.
+
+=> The performance of LinkedHashSet is slightly slower than HashSet due to the
+overhead of maintaining the insertion order.
+
+============================
+LinkedHashSet vs. TreeSet
+============================
+
+Here are the main differences between LinkedHashSet and TreeSet:
+
+=> TreeSet implements the SortedSet interface, so it automatically sorts elements
+(in natural order or via a custom comparator). In contrast, LinkedHashSet only
+maintains insertion order, not sorting.
+
+=> TreeSet is usually slower than LinkedHashSet because it performs sorting
+operations whenever an element is added or removed.
+
+=> LinkedHashSet allows one null element, whereas TreeSet does not allow null if
+it uses natural ordering, as null cannot be compared.
+
+
  */

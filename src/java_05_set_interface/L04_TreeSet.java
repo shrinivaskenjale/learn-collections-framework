@@ -5,7 +5,13 @@ import java.util.*;
 public class L04_TreeSet {
     public static void main(String[] args) {
 
+        // Create an empty set.
         Set<Integer> numbers = new TreeSet<>();
+        System.out.println(numbers);
+
+        // Create a set from elements of other collection.
+        Set<Integer> set2 = new TreeSet<>(Arrays.asList(4, 2, 3, 3, 1, 4, 2));
+        System.out.println(set2);
 
         // All methods are same as HashSet.
 
@@ -15,7 +21,6 @@ public class L04_TreeSet {
         numbers.add(2);
         numbers.add(1);
         numbers.add(6);
-
         System.out.println(numbers);
 
         // ==========================
@@ -35,9 +40,9 @@ public class L04_TreeSet {
         // TreeMap with Comparable elements
         // ==============================
 
-        // If user defined class' objects are to be inserted into the TreeSet, the class
-        // must implement Comparable interface to define the order of objects else you
-        // get runtime exception.
+        // If objects of a user-defined class are to be inserted into a TreeSet,
+        // the class must implement the Comparable interface to define the natural ordering.
+        // Otherwise, a runtime exception (ClassCastException) will occur.
         Set<Person> people = new TreeSet<>();
 
         people.add(new Person("John"));
@@ -53,115 +58,101 @@ public class L04_TreeSet {
     }
 }
 
-// Class implements Comparable interface
-class Person implements Comparable<Person> {
-    String name;
 
-    public Person(String name) {
-        this.name = name;
-    }
-
-    @Override
-    public String toString() {
-        return "Person [name=" + name + "]";
-    }
-
-    @Override
-    public int compareTo(Person other) {
-        return this.name.compareTo(other.name);
-    }
-
-}
 
 /*
- * ===============
- * TreeSet class
- * ===============
- * 
- * The TreeSet class of the Java collections framework provides the
- * functionality of a tree data structure.
- * 
- * TreeSet maintains the sorted order of elements.
- * 
- * It extends the NavigableSet interface.
- * 
- * There are various methods which are not present in other set implementations.
- * 
- * =====================
- * TreeSet Vs. HashSet
- * =====================
- * 
- * Both the TreeSet as well as the HashSet implements the Set interface.
- * However, there exist some differences between them.
- * 
- * => Unlike HashSet, elements in TreeSet are stored in some order. It is
- * because TreeSet implements the SortedSet interface as well.
- * 
- * => TreeSet provides some methods for easy navigation. For example, first(),
- * last(), headSet(), tailSet(), etc. It is because TreeSet also implements the
- * NavigableSet interface.
- * 
- * => HashSet is faster than the TreeSet for basic operations like add, remove,
- * contains and size.
- * 
- * 
- * =============================================
- * TreeSet of custom objects
- * =============================================
- * 
- * For custom objects as elements we have 2 options:
- * a. Comparator interface
- * - Pass instance of subclass of Comparator interface as an argument to the
- * TreeSet constructor.
- * 
- * b. Comparable interface
- * - Implement the Comparable interface in the class of custom objects.
- * 
- * TreeSet relies on Comparator or Comparable interface to order and store
- * elements.
- * This is unlike HashSet and LinkedHashSet which utilizes hashCode() and
- * equals() for key lookups.
- *
- * Still, it's a good practice to also override equals() and hashCode() to
- * ensure consistency and interoperability with other hash based collections.
- * 
- * =====================
- * TreeSet Comparator
- * =====================
- * 
- * Tree set elements are sorted naturally. However, we can also customize the
- * ordering of elements.
- * 
- * For this, we need to create our own comparator class based on which elements
- * in a tree set are sorted. For example,
- * 
- * TreeSet<String> animals = new TreeSet<>(new CustomComparator());
- * 
- * In the above example, we have created a tree set passing CustomComparator
- * class as an argument.
- * 
- * The CustomComparator class implements the Comparator interface.
- * 
- * 
- * ============
- * Extra
- * ============
- * 
- * If you override the compareTo() method in your class to define a custom
- * ordering, it is generally recommended to also override the equals() and
- * hashCode() methods to ensure consistency and correctness when using
- * collections like TreeSet.
- * 
- * This ensures that objects that are considered equal based on your compareTo()
- * method will also be treated as equal by these collections.
- * 
- * 
- * If there is a conflict between result of equals() and compareTo() in terms of
- * equality then TreeSet/TreeMap shows strange results.
- * E.g., You are comparing two objects based on length of some string field in
- * compareTo() whereas you are comparing some values of fields in equals() then
- * it is not possible for both methods to agree upon equality.
- * 
- * In summary, if equals() returns true then compareTo() should return 0 and
- * vice-verse.
+===============
+TreeSet Class
+===============
+
+The TreeSet class in the Java Collections Framework provides the functionality of
+a self-balancing tree data structure (specifically a Red-Black Tree).
+
+TreeSet automatically maintains the elements in sorted order (natural order or based
+on a custom comparator).
+
+It implements the NavigableSet interface, which extends SortedSet, providing additional
+navigation methods like ceiling(), floor(), higher(), and lower().
+
+TreeSet offers several methods that are not available in other Set implementations,
+allowing for range-based operations, element retrieval based on order, and more.
+
+=====================
+TreeSet vs. HashSet
+=====================
+
+Both TreeSet and HashSet implement the Set interface, but there are key differences
+between them:
+
+=> Unlike HashSet, elements in a TreeSet are stored in sorted order. This is because
+TreeSet implements the SortedSet interface.
+
+=> TreeSet also implements the NavigableSet interface, providing convenient navigation
+methods such as first(), last(), headSet(), tailSet(), and others.
+
+=> For basic operations like add(), remove(), contains(), and size(), HashSet is
+generally faster than TreeSet due to the overhead of maintaining sorted order in TreeSet.
+
+
+============================
+TreeSet of Custom Objects
+============================
+
+When using custom objects as elements in a TreeSet, you have two options to define
+the sorting order:
+
+a. Using the Comparator interface:
+Pass an instance of a class that implements the Comparator interface as an argument
+to the TreeSet constructor.
+
+b. Using the Comparable interface:
+Implement the Comparable interface in your custom object's class and override the
+compareTo() method.
+
+Important: If both a Comparator and the object’s Comparable implementation are provided,
+the Comparator takes precedence and is used to order the elements.
+
+TreeSet relies on either the Comparator or Comparable interface to order and store
+elements. This differs from HashSet and LinkedHashSet, which use the hashCode()
+and equals() methods for key lookups and uniqueness.
+
+However, it is still good practice to override equals() and hashCode() in your
+custom class to ensure consistency and proper behavior when interacting with other
+hash-based collections.
+
+=====================
+TreeSet Comparator
+=====================
+
+By default, TreeSet elements are sorted according to their natural order. However,
+you can customize the ordering by providing your own comparator.
+
+To do this, create a class that implements the Comparator interface and define the
+sorting logic. Then, pass an instance of this comparator to the TreeSet constructor.
+For example:
+
+TreeSet<String> animals = new TreeSet<>(new CustomComparator());
+
+In this example, CustomComparator is a class that implements the Comparator interface
+and defines the custom sorting order for the elements in the tree set.
+
+
+============
+Extra
+============
+
+If you override the compareTo() method in your class to define a custom ordering,
+it is generally recommended to also override the equals() and hashCode() methods
+to ensure consistency and correctness when using collections like TreeSet.
+
+This ensures that objects considered equal by your compareTo() method are also
+treated as equal by these collections.
+
+If there is a conflict between the results of equals() and compareTo() regarding
+equality, then TreeSet or TreeMap can exhibit unexpected or inconsistent behavior.
+
+For example, if your compareTo() method compares two objects based on the length
+of a string field, but equals() compares other field values, the two methods may
+disagree on whether objects are equal.
+
  */

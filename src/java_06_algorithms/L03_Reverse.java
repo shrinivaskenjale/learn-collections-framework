@@ -4,10 +4,11 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 
-public class Reverse {
+public class L03_Reverse {
     public static void main(String[] args) {
 
         List<Integer> numbers = new ArrayList<>();
+
         numbers.add(1);
         numbers.add(2);
         numbers.add(3);
@@ -19,4 +20,8 @@ public class Reverse {
     }
 }
 
-// https://www.geeksforgeeks.org/collections-reverse-method-in-java-with-examples/
+/*
+
+The Collections.reverse() method in Java can be used only on lists, i.e., instances of the List interface.
+
+ */

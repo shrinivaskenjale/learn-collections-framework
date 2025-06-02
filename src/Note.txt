@@ -1,0 +1,14 @@
+Natural order refers to the default sorting order that is defined by the data type itself — it is the order used when no custom Comparator is provided.
+
+📌 For example:
+For numbers: natural order means ascending order (1, 2, 3, …).
+
+For strings: natural order means lexicographical (dictionary) order ("apple", "banana", "cat", …).
+
+For custom classes: natural order is defined by implementing the Comparable interface and overriding the compareTo() method.
+
+
+
+Comparable<T>: Defines natural ordering. Implemented by the class itself.
+
+Comparator<T>: Defines custom ordering. Often used with lambdas or anonymous classes.

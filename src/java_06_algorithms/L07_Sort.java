@@ -5,7 +5,7 @@ import java.util.Collections;
 import java.util.Comparator;
 import java.util.List;
 
-public class Sort {
+public class L07_Sort {
     public static void main(String[] args) {
         List<Integer> numbers = new ArrayList<>();
         numbers.add(2);
@@ -88,67 +88,41 @@ public class Sort {
         // Sorting Student objects with roll no. in reverse order of the compare().
         Collections.sort(students, Comparator.reverseOrder());
         System.out.println(students);
-
     }
 }
 
-class Student implements Comparable<Student> {
-    int rollNo;
-    String name;
 
-    public Student(int rollNo, String name) {
-        this.rollNo = rollNo;
-        this.name = name;
-    }
-
-    @Override
-    public String toString() {
-        return "Student [name=" + name + ", rollNo=" + rollNo + "]";
-    }
-
-    @Override
-    public int compareTo(Student other) {
-        // If returned value is POSITIVE, `this` object is greater.
-        // If returned value is NEGATIVE, `this` object is smaller.
-        // If returned value is 0, both objects are equal.
-
-        // Ascending with rollNo
-        return this.rollNo - other.rollNo;
-
-        // Alternate logic
-        // if (this.rollNo == other.rollNo) {
-        // return 0;
-        // } else if (this.rollNo < other.rollNo) {
-        // return -1;
-        // } else {
-        // return 1;
-        // }
-    }
-
-}
 
 /*
- * 
- * We can customize the sorting order of the sort() method using
- * a. Comparator interface
- * b. Comparable interface
- * 
- * https://www.javatpoint.com/difference-between-comparable-and-comparator
- * 
- * ================
- * Useful methods
- * ================
- * 
- * "stringA".compareTo("stringB");
- * "stringA".compareToIgnoreCase("stringB");
- * Character.compare('a', 'b');
- * Integer.compare(3, 4);
- * Double.compare(3.0, 4.0);
- * 
- * Integer n = 3;
- * n.compareTo(4); // Won't work with primitive int type variable
- * 
- * String.compare() does not exist.
- * 
- * Just add - sign before these methods to get descending order.
+
+Collections.sort() works only on List implementations that are mutable and contain
+elements that are either Comparable or with a provided Comparator.
+
+If the type implements Comparable but you provide a Comparator to Collections.sort(), the Comparator takes precedence and is used for sorting instead of the natural ordering.
+
+It can't sort Set & Queue implementations.
+
+It sorts original list.
+
+https://www.javatpoint.com/difference-between-comparable-and-comparator
+
+================
+Useful methods
+================
+
+Most built-in types in Java, such as String, Integer, Double, and other wrapper classes, implement the Comparable interface to support natural ordering.
+
+"stringA".compareTo("stringB");
+"stringA".compareToIgnoreCase("stringB");
+Character.compare('a', 'b');
+Integer.compare(3, 4);
+Double.compare(3.0, 4.0);
+
+Integer n = 3;
+n.compareTo(4); // Won't work with primitive int type variable
+
+String.compare() does not exist.
+
+Just add - sign before these methods to get descending order.
+
  */

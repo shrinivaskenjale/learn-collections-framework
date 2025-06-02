@@ -52,18 +52,19 @@ public class L06_NestedMaps {
 }
 
 /*
- * Example:
- * 
- * {
- * "Alex": {
- * "Hideout": "UAE",
- * "Permanent": "Florida",
- * "Postal": "Canada"
- * },
- * "Brian": {
- * "Hideout": "India",
- * "Permanent": "Alaska",
- * "Postal": "Canada"
- * }
- * }
+Example:
+
+{
+"Alex": {
+    "Hideout": "UAE",
+    "Permanent": "Florida",
+    "Postal": "Canada"
+},
+"Brian": {
+    "Hideout": "India",
+    "Permanent": "Alaska",
+    "Postal": "Canada"
+}
+}
+
  */

@@ -3,7 +3,7 @@ package java_06_algorithms;
 import java.util.ArrayList;
 import java.util.Collections;
 
-public class Frequency {
+public class L05_Frequency {
     public static void main(String[] args) {
         ArrayList<Integer> numbers = new ArrayList<>();
         numbers.add(1);
@@ -17,3 +17,7 @@ public class Frequency {
         System.out.println("Count of 2: " + count);
     }
 }
+
+/*
+This method works with Collection implementations i.e., List, Set and Queue.
+ */

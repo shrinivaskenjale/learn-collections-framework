@@ -118,29 +118,29 @@ public class L05_ArrayDeque {
 // size queue.
 
 /*
- * ==================
- * ArrayDeque class
- * ==================
- * 
- * We can use the ArrayDeque class to implement queue and deque data structures
- * using arrays.
- * 
- * The ArrayDeque class implements Deque interface.
- * The ArrayDeque class provides implementations for all the methods present in
- * Queue and Deque interfaces.
- * 
- * =======================
- * ArrayDeque as a Stack
- * =======================
- * 
- * To implement a LIFO (Last-In-First-Out) stacks in Java, it is recommended to
- * use a deque over the Stack class. The ArrayDeque class is likely to be faster
- * than the Stack class.
- * 
- * ArrayDeque provides the following methods that can be used for implementing a
- * stack.
- * 
- * push() - adds an element to the top of the stack
- * peek() - returns an element from the top of the stack
- * pop() - returns and removes an element from the top of the stack
+==================
+ArrayDeque class
+==================
+
+We can use the ArrayDeque class to implement queue and deque data structures
+using arrays.
+
+The ArrayDeque class implements Deque interface.
+The ArrayDeque class provides implementations for all the methods present in
+Queue and Deque interfaces.
+
+=======================
+ArrayDeque as a Stack
+=======================
+
+To implement a LIFO (Last-In-First-Out) stacks in Java, it is recommended to
+use a deque over the Stack class. The ArrayDeque class is likely to be faster
+than the Stack class.
+
+ArrayDeque provides the following methods that can be used for implementing a
+stack.
+
+push() - adds an element to the top of the stack
+peek() - returns an element from the top of the stack
+pop() - returns and removes an element from the top of the stack
  */

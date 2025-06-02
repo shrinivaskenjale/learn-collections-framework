@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 
-public class Swap {
+public class L04_Swap {
     public static void main(String[] args) {
         List<Integer> numbers = new ArrayList<>();
 
@@ -22,3 +22,9 @@ public class Swap {
         System.out.println(numbers);
     }
 }
+
+/*
+
+Collections.swap() works only with List implementations.
+
+ */

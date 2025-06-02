@@ -24,43 +24,40 @@ public class L02_ListIterator {
 }
 
 /*
- * =========================
- * ListIterator Interface
- * =========================
- * 
- * The ListIterator interface of the Java collections framework provides the
- * functionality to access elements of a list.
- * 
- * It is bidirectional. This means it allows us to iterate elements of a list in
- * both the direction.
- * 
- * It extends the Iterator interface.
- * 
- * The List interface provides a listIterator() method that returns an instance
- * of the ListIterator interface.
- * 
- * =========================
- * Methods of ListIterator
- * =========================
- * 
- * The ListIterator interface provides methods that can be used to perform
- * various operations on the elements of a list.
- * 
- * => hasNext() - returns true if there exists an element in the list
- * 
- * => next() - returns the next element of the list
- * 
- * => nextIndex() - returns the index of the element that the next() method will
- * return
- * 
- * => previous() - returns the previous element of the list
- * 
- * => previousIndex() - returns the index of the element that the previous()
- * method will return
- * 
- * => remove() - removes the element returned by either next() or previous()
- * 
- * => set() - replaces the element returned by either next() or previous() with
- * the specified element
- * 
+=========================
+ListIterator Interface
+=========================
+
+The ListIterator interface in the Java Collections Framework provides functionality to access and modify elements of a list.
+
+It is bidirectional, meaning it allows us to iterate over the elements of a list in both forward and backward directions.
+
+It extends the Iterator interface and adds additional methods for bidirectional traversal and element modification.
+
+The List interface provides a listIterator() method, which returns an instance of the ListIterator interface.
+
+=========================
+Methods of ListIterator
+=========================
+
+The ListIterator interface provides methods that can be used to perform
+various operations on the elements of a list.
+
+=> hasNext() - returns true if there exists an element in the list
+
+=> next() - returns the next element of the list
+
+=> nextIndex() - returns the index of the element that the next() method will
+return
+
+=> previous() - returns the previous element of the list
+
+=> previousIndex() - returns the index of the element that the previous()
+method will return
+
+=> remove() - removes the element returned by either next() or previous()
+
+=> set() - replaces the element returned by either next() or previous() with
+the specified element
+
  */
