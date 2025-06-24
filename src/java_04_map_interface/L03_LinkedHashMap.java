@@ -17,45 +17,55 @@ public class L03_LinkedHashMap {
 
 /*
 =======================
-LinkedHashMap class
+LinkedHashMap Class
 =======================
 
-The LinkedHashMap class of the Java collections framework provides the hash
-table and linked list implementation of the Map interface.
+The LinkedHashMap class in the Java Collections Framework provides a hash table and
+linked list implementation of the Map interface.
 
-The LinkedHashMap interface extends the HashMap class to store its entries in
-a hash table. It internally maintains a doubly-linked list among all of its
-entries to order its entries.
+It extends the functionality of HashMap by maintaining a doubly-linked list running
+through all its entries. This linked list preserves the insertion order (or optionally,
+access order) of the entries, enabling predictable iteration order.
 
-=================================
-LinkedHashMap of custom objects as keys
-=================================
+===========================================
+LinkedHashMap with Custom Objects as Keys
+===========================================
 
-Implement both equals() and hashCode() in the class of the objects that are
-keys.
+When using custom objects as keys in a LinkedHashMap, it is essential to override both
+equals() and hashCode() methods in the key class.
+
+These methods must be consistent and based on the same set of fields to ensure correct behavior.
+
+Proper overriding ensures that keys are correctly identified and stored in the map,
+maintaining the expected insertion order.
 
 ===========================
-LinkedHashMap Vs. HashMap
+LinkedHashMap vs HashMap
 ===========================
 
-Both the LinkedHashMap and the HashMap implement the Map interface. However,
-there exist some differences between them.
+Both LinkedHashMap and HashMap implement the Map interface, but they have key differences:
 
-=> LinkedHashMap maintains a doubly-linked list internally. Due to this, it
-maintains the insertion order of its elements.
+=> Ordering:
+LinkedHashMap maintains a doubly-linked list internally, preserving the insertion order
+of its entries. HashMap does not guarantee any specific order.
 
-=> The LinkedHashMap class requires more storage than HashMap. This is
-because LinkedHashMap maintains linked lists internally.
+=> Memory Usage:
+LinkedHashMap requires more memory than HashMap because it stores the linked list pointers
+for maintaining order.
 
-=> The performance of LinkedHashMap is slower than HashMap.
+Performance:
+Due to the overhead of maintaining the linked list, LinkedHashMap operations are typically
+slightly slower than those of HashMap.
 
 ==========================
-Capacity and load factor
+Capacity and Load Factor
 ==========================
 
-By default,
-the capacity of the linked hashmap will be 16
-the load factor will be 0.75
+By default, a LinkedHashMap has:
+Initial capacity = 16
+Load factor = 0.75
+
+These defaults mean the map will resize when it is 75% full, similar to HashMap.
 
 
 

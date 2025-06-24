@@ -8,14 +8,16 @@ public class L02_HashMap {
         // Create a HashMap
         // ==================
 
-        // When creating map, define type of key and type of value inside <>.
+        // Create an empty map
         Map<String, Integer> numbers = new HashMap<>();
+        System.out.println("Empty map: " + numbers);
 
-        // Create map from other map implementation
-        // Map<KeyType, ValueType> map = new HashMap<>(any map implementaion);
+        // Create a map from other map implementation
+        Map<String, Integer> ratings = new HashMap<>(Map.of("Shri", 10, "John", 8));
+        System.out.println("Map initialized with other map's entries: " + ratings);
 
         // ==============
-        // Add elements
+        // Add entires
         // ==============
 
         // put(key, value): Adds or updates the value for given key
@@ -23,71 +25,70 @@ public class L02_HashMap {
         numbers.put("two", 2);
         numbers.put("three", 3);
         numbers.put("four", 5);
+        System.out.println("After multiple put(): " + numbers);
 
         // Value gets updated if key already exists
         numbers.put("four", 4);
-
-        System.out.println(numbers);
+        System.out.println("After put('four', 4): " + numbers);
 
         // putIfAbsent(key, value): Add key-value pair only if key is not present or
         // value associated with it is null.
         numbers.putIfAbsent("five", 5);
         numbers.putIfAbsent("one", 10); // No effect
-
-        System.out.println(numbers);
+        System.out.println("After putIfAbsent(): " + numbers);
 
         // putAll(map): Copies entries of specified map into this map.
+        numbers.putAll(Map.of("Twenty", 20, "Hundred", 100));
+        System.out.println("After putAll(): " + numbers);
 
         // put(), putIfAbsent() return previous value associated with the key else null.
 
         // ================
-        // Access elements
+        // Access entries
         // ================
 
         // get(key): Returns value associated with key else null
-        System.out.println(numbers.get("five"));
-        System.out.println(numbers.get("twenty")); // null
+        System.out.println("get('five'): " + numbers.get("five"));
+        System.out.println("get('forty'): " + numbers.get("forty")); // null
 
         // getOrDefault(key, default value): Returns value associated with key else
         // default value
-        System.out.println(numbers.getOrDefault("ten", 0));
+        System.out.println("getOrDefault('ten'): " +
+                numbers.getOrDefault("ten", 0));
 
         // keySet(): Returns set of keys in the map.
         // Set because keys are unique.
         Set<String> keys = numbers.keySet();
-        System.out.println(keys);
+        System.out.println("keySet(): " + keys);
 
         // values(): Returns collection of values in the map.
         // Collection because values can repeat.
         Collection<Integer> values = numbers.values();
-        System.out.println(values);
+        System.out.println("values(): " + values);
 
         // entrySet(): Returns set of entries in the map.
         Set<Map.Entry<String, Integer>> entries = numbers.entrySet();
-        System.out.println(entries);
+        System.out.println("entrySet(): " + entries);
 
         // java.util.Map.Entry
 
         // ================
-        // Update elements
+        // Update entries
         // ================
 
         // replace(key, value): Updates the value for the specified key only if the key
         // already exists.
         // Returns old value if key is present else null.
         numbers.replace("one", 100);
-        numbers.replace("twenty", 20); // No effect - Key not present
-
-        System.out.println(numbers);
+        numbers.replace("forty", 20); // No effect - Key not present
+        System.out.println("After replace(): " + numbers);
 
         // replace(key, old value, new value): Updates the value for the specified key
         // only if the key already exists with specified old value.
         // Returns true if value was replaced.
         numbers.replace("one", 100, 1);
+        System.out.println("After replace(): " + numbers);
 
-        System.out.println(numbers);
-
-        // replaceAll():
 
         // put() also updates the value associated with the key.
         // replace() ensures that only existing keys are updated without adding new
@@ -98,58 +99,59 @@ public class L02_HashMap {
         // ===================
 
         // size(): Returns size of the map
-        System.out.println(numbers.size());
+        System.out.println("size(): " + numbers.size());
 
         // isEmpty(): Check if map is empty
-        System.out.println(numbers.isEmpty());
+        System.out.println("isEmpty(): " + numbers.isEmpty());
 
         // containsKey(key): Check if key is present
-        System.out.println(numbers.containsKey("three"));
+        System.out.println("containsKey('three'): " + numbers.containsKey("three"));
 
         // containsValue(value): Check if value is present
-        System.out.println(numbers.containsValue(9));
+        System.out.println("containsValue(9): " + numbers.containsValue(9));
 
-        // merge():
 
         // ====================================================
         // Iterate on the map
         // ====================================================
 
-        // https://www.geeksforgeeks.org/iterate-map-java/
-
         // Iteration on key-value pairs
+        System.out.println("Iterate key-value pairs using for-each loop & entrySet():");
         for (Map.Entry<String, Integer> entry : numbers.entrySet()) {
             System.out.println(entry.getKey() + " => " + entry.getValue());
         }
 
         // Iteration on keys
+        System.out.println("Iterate keys using for-each loop & keySet():");
         for (String key : numbers.keySet()) {
             System.out.println(key);
         }
 
         // Iteration on values
+        System.out.println("Iterate values using for-each loop & values():");
         for (Integer value : numbers.values()) {
             System.out.println(value);
         }
 
         // =================
-        // Remove elements
+        // Remove entries
         // =================
 
         // remove(key): Removes the entry associated with the key.
         // Returns value if key is present else null.
-        System.out.println(numbers.remove("five"));
-        System.out.println(numbers.remove("fifty")); // null
-        System.out.println(numbers);
+        numbers.remove("five"); // returns 5
+        numbers.remove("fifty"); // returns null
+        System.out.println("After remove('five'): " + numbers);
 
         // remove(key, value): Removes the entry only if both key and value match.
         // Returns true if entry was removed else false.
         System.out.println(numbers.remove("four", 4));
         System.out.println(numbers.remove("two", 4));
+        System.out.println("After remove('four', 4): " + numbers);
 
         // clear(): Removes all mappings from the map
         numbers.clear();
-        System.out.println(numbers);
+        System.out.println("After clear(): " + numbers);
 
         // ================================================
         // HashMap and LinkedHashMap of custom object keys
@@ -161,119 +163,95 @@ public class L02_HashMap {
         Person p4 = new Person(2, "Brock", 10); // Logically duplicate object
 
         Map<Person, Integer> map = new LinkedHashMap<>();
-
         map.put(p1, 1);
         map.put(p2, 2);
         map.put(p3, 3);
+        System.out.println("Map with custom object keys: " + map);
 
         // Although p2 and p4 are different objects (look at age). But equals() and
         // hashCode() depend on id and name which are same for these two objects.
         // So, put() here updates the value associated with the p2 key but does not
         // replace the key.
         map.put(p4, 4);
+        System.out.println("After put(p4, 4): " + map);
 
         // If you wanted to change the key, you first need to remove the old entry using
         // old key and then insert new entry using new key.
-
-        for (Person key : map.keySet()) {
-            System.out.printf("%s => %d \n", key, map.get(key));
-        }
-
     }
 }
 
-class Person {
-    int id;
-    String name;
-    int age;
 
-    public Person(int id, String name, int age) {
-        this.id = id;
-        this.name = name;
-        this.age = age;
-    }
-
-    @Override
-    public String toString() {
-        return "Person [id=" + id + ", name=" + name + ", age=" + age + "]";
-    }
-
-    @Override
-    public int hashCode() {
-        final int prime = 31;
-        int result = 1;
-        result = prime * result + id;
-        result = prime * result + ((name == null) ? 0 : name.hashCode());
-        return result;
-    }
-
-    // id and name are considered for equality
-    @Override
-    public boolean equals(Object obj) {
-        if (this == obj)
-            return true;
-        if (obj == null)
-            return false;
-        if (getClass() != obj.getClass())
-            return false;
-        Person other = (Person) obj;
-        if (id != other.id)
-            return false;
-        if (name == null) {
-            if (other.name != null)
-                return false;
-        } else if (!name.equals(other.name))
-            return false;
-        return true;
-    }
-
-}
 
 /*
 ===============
-HashMap class
+HashMap Class
 ===============
+The HashMap class in the Java Collections Framework provides the functionality of a
+hash table data structure.
 
-The HashMap class of the Java collections framework provides the
-functionality of the hash table data structure.
+It stores elements as key-value pairs, where each key is unique and used to associate
+with a corresponding value.
 
-It stores elements in key/value pairs. Here, keys are unique identifiers used
-to associate each value on a map.
-
-The HashMap class implements the Map interface.
+The HashMap class implements the Map interface and allows null values and one null key.
+It does not maintain any order of keys (neither insertion nor sorted).
 
 =================================================
-HashMap and LinkedHashMap of custom object keys
+HashMap and LinkedHashMap with Custom Object Keys
 =================================================
 
-Override both equals() and hashCode() in the class of the objects that are
-keys. Both methods should depend on same fields. These methods help to find
-the right bucket for the key.
+When using custom objects as keys in a HashMap or LinkedHashMap, it is essential to
+override both equals() and hashCode() methods in the key class.
+
+These methods should be based on the same set of fields that define logical equality.
+
+The hashCode() method helps locate the correct bucket for the key.
+
+The equals() method is used to check for key equality within that bucket.
+
+Failing to override these methods correctly may lead to unexpected behavior, such as
+keys not being found even if they appear to be equal.
 
 
 =====================================
 HashMap vs LinkedHashMap vs TreeMap
 =====================================
 
-Hashmap is unordered.
-LinkedHashMap maintains insertion order
-TreeMap maintains natural order
+HashMap
+=> Does not maintain any order of its entries.
+=> Provides constant-time performance for basic operations like get() and put().
+=> Allows one null key and multiple null values.
+=> Backed by a hash table.
+
+LinkedHashMap
+=> Maintains the insertion order of keys.
+=> Slightly slower than HashMap due to the added overhead of maintaining a linked list.
+=> Also allows one null key and multiple null values.
+=> Backed by a hash table and a doubly linked list.
+
+TreeMap
+=> Maintains natural ordering of keys, or a custom order if a Comparator is provided.
+=> Does not allow null keys (throws NullPointerException), but allows multiple null values.
+=> Operations like get(), put() take O(log n) time.
+=> Backed by a Red-Black Tree.
 
 ==========================
-Capacity and load factor
+Capacity and Load Factor
 ==========================
 
-While creating a hashmap, we can include optional parameters: capacity and
-load factor. For example,
+When creating a HashMap, you can specify optional parameters: initial capacity and
+load factor. For example:
 
 HashMap<K, V> numbers = new HashMap<>(8, 0.6f);
 
-Here,
-8 (capacity is 8) - This means it can store 8 entries.
-0.6f (load factor is 0.6) - This means whenever our hash table is filled by
-60%, the entries are moved to a new hash table double the size of the
-original hash table.
-If the optional parameters not used, then the default capacity will be 16 and
-the default load factor will be 0.75.
+=> Capacity (8): The initial number of buckets in the hash table.
+It means the map can initially store approximately 8 entries before resizing.
+
+=> Load Factor (0.6f): A measure that determines when to resize the hash table.
+When the map is 60% full, it will resize by creating a new hash table with double the
+previous capacity and rehash all existing entries.
+
+If these parameters are not specified, the default values are:
+=> Initial capacity = 16
+=> Load factor = 0.75 (resize happens when the table is 75% full)
 
  */

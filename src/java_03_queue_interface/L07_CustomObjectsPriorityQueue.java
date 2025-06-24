@@ -17,28 +17,5 @@ public class L07_CustomObjectsPriorityQueue {
     }
 }
 
-class Car {
-    String name;
-    int speed;
 
-    public Car(String name, int speed) {
-        this.name = name;
-        this.speed = speed;
-    }
 
-    // public int compareTo(Car other) {
-    // return Integer.compare(speed, other.speed);
-    // }
-
-    @Override
-    public String toString() {
-        return "Car [name=" + name + ", speed=" + speed + "]";
-    }
-
-}
-
-class CarComparator implements Comparator<Car> {
-    public int compare(Car a, Car b) {
-        return Integer.compare(a.speed, b.speed);
-    }
-}

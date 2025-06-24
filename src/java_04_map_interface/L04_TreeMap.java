@@ -10,18 +10,19 @@ public class L04_TreeMap {
         // Create a TreeMap
         // ==================
 
+        // Create empty map
         Map<String, Integer> numbers = new TreeMap<>();
+        System.out.println("Empty map: " + numbers);
 
         // Everything is same as HashMap, but keys are stored in sorted order.
-        // Built-in data types have Comparable interface implemented.
+        // Built-in data types have natural order defined.
 
         numbers.put("one", 1);
         numbers.put("two", 2);
         numbers.put("three", 3);
         numbers.put("four", 5);
         numbers.put("four", 4);
-
-        System.out.println(numbers);
+        System.out.println("After multiple put(): " + numbers);
 
         // ==========================
         // TreeMap with Comparator
@@ -42,8 +43,7 @@ public class L04_TreeMap {
         numbers2.put("three", 3);
         numbers2.put("four", 5);
         numbers2.put("four", 4);
-
-        System.out.println(numbers2);
+        System.out.println("Map with comparator: "+numbers2);
 
         System.out.println("\n\n");
 
@@ -59,7 +59,7 @@ public class L04_TreeMap {
         carsSlowToFast.put(new Car("Audi", 250), 1000);
         carsSlowToFast.put(new Car("Tata", 50), 50);
 
-        System.out.println(carsSlowToFast);
+        System.out.println("Map with Comparable keys: "+carsSlowToFast);
 
         // Although this (Skoda,150) and the one already present in map are different
         // objects, treemap just compares keys based of speed field of the Car object.
@@ -106,70 +106,40 @@ public class L04_TreeMap {
     }
 }
 
-class Car implements Comparable<Car> {
-    String name;
-    int speed;
 
-    public Car(String name, int speed) {
-        this.name = name;
-        this.speed = speed;
-    }
-
-    public int compareTo(Car other) {
-        return Integer.compare(speed, other.speed);
-    }
-
-    @Override
-    public String toString() {
-        return "Car [name=" + name + ", speed=" + speed + "]";
-    }
-
-    // TreeMap doesn't depend on hashCode() and equals().
-}
 
 /*
-=================
-TreeMap class
-=================
+================
+TreeMap Class
+================
 
-The TreeMap class of the Java collections framework provides the tree data
-structure implementation.
+The TreeMap class in the Java Collections Framework provides an implementation of a
+red-black tree data structure.
 
-It implements the NavigableMap interface.
+It implements the NavigableMap interface, which extends SortedMap, allowing it to
+maintain its entries sorted according to the natural ordering of keys or a specified
+Comparator.
 
 ===================================
-TreeMap of custom objects as keys
+TreeMap with Custom Objects as Keys
 ===================================
 
-For custom objects as keys we have 2 options:
+When using custom objects as keys in a TreeMap, you have two options to define the
+key ordering:
 
-a. Comparator interface
-- Pass instance of subclass of Comparator interface as an argument to the
+a. Using the Comparator interface
+=> Provide an instance of a class that implements Comparator as an argument to the
 TreeMap constructor.
+=> This allows custom ordering without modifying the key class.
 
-b. Comparable interface
-- Implement the Comparable interface in the class of custom objects.
+b. Using the Comparable interface
+=> Implement the Comparable interface in the key class itself.
+=> Define the natural ordering by overriding the compareTo() method.
 
-TreeMap relies on Comparator or Comparable interface to order and store keys.
-This is unlike HashMap and LinkedHashMap which utilizes hashCode() and
-equals() for key lookups.
+TreeMap relies on Comparator or Comparable for sorting and storing keys. This differs
+from HashMap and LinkedHashMap, which depend on hashCode() and equals() for key lookup.
 
-Still, it's a good practice to also override equals() and hashCode() to
-ensure consistency and interoperability with other hash based collections.
-
-==========================
-TreeMap with Comparator
-==========================
-
-Treemap elements are sorted naturally (in ascending order). However, we can
-also customize the ordering of keys.
-
-For this, we need to create our own comparator class based on which keys in a
-treemap are sorted. Then pass the instance of the comparator as an argument to
-TreeMap constructor.
-
-TreeMap<String, Integer> numbers = new TreeMap<>(new CustomComparator());
-
-
+Note: It is still good practice to override equals() and hashCode() in the key class to
+ensure consistency and compatibility with hash-based collections.
 
  */

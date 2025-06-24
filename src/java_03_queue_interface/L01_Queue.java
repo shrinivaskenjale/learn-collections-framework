@@ -27,65 +27,81 @@ public class L01_Queue {
 Queue Interface
 =================
 
-The Queue interface of the Java collections framework provides the
-functionality of the queue data structure.
+The Queue interface in the Java Collections Framework provides the functionality of
+a queue data structure, typically following First-In-First-Out (FIFO) ordering.
 
-It extends the Collection interface.
+It extends the Collection interface, thereby inheriting its methods while also
+introducing additional methods specifically for queue operations.
 
-==============================
-Classes that Implement Queue
-==============================
+================================================
+Classes that Implement the Queue Interface
+================================================
 
-Since the Queue is an interface, we cannot provide the direct implementation
-of it.
+Since Queue is an interface, it cannot be instantiated directly.
 
-In order to use the functionalities of Queue, we need to use classes that
-implement it:
-=> ArrayDeque
-=> LinkedList
-=> PriorityQueue
+To use the functionalities of a queue, we must use classes that implement the Queue
+interface, such as:
 
+=> ArrayDeque: A resizable array implementation of a deque that can be used as a queue
+or stack with no capacity restrictions.
 
-=============================
-Interfaces that extend Queue
-=============================
+=> LinkedList: A doubly linked list implementation that supports all queue operations
+and allows null elements.
 
-The Queue interface is also extended by various sub-interfaces:
-=> Deque
-=> BlockingQueue
-=> BlockingDeque
+=> PriorityQueue: A queue implementation that orders elements according to their natural
+ordering or a custom comparator.
 
-=================================
-Working of Queue Data Structure
-=================================
+Each of these classes provides different behaviors and performance characteristics
+depending on the use case.
 
-In queues, elements are stored and accessed in First In, First Out manner.
-That is, elements are added from the behind and removed from the front.
+=============================================
+Interfaces that Extend the Queue Interface
+=============================================
 
-==================
-Methods of Queue
-==================
+The Queue interface is extended by several sub-interfaces that add specialized behaviors:
 
-The Queue interface includes all the methods of the Collection interface. It
-is because Collection is the super interface of Queue.
+=> Deque – A double-ended queue that allows insertion and removal of elements
+from both ends.
 
-Some of the commonly used methods of the Queue interface are:
+=> BlockingQueue – A thread-safe queue that supports operations that wait for the
+queue to become non-empty or for space to become available.
 
-=> add() - Inserts the specified element into the queue. If the task is
-successful, add() returns true, if not it throws an exception.
+=> BlockingDeque – A thread-safe, double-ended queue that combines features of Deque
+and BlockingQueue.
 
-=> offer() - Inserts the specified element into the queue. If the task is
-successful, offer() returns true, if not it returns false.
+=======================================
+Working of the Queue Data Structure
+=======================================
 
-=> element() - Returns the head of the queue. Throws an exception if the
-queue is empty.
+A queue follows the First-In, First-Out (FIFO) principle, meaning the element added
+first is the one removed first.
 
-=> peek() - Returns the head of the queue. Returns null if the queue is
-empty.
+Elements are added at the rear (tail) and removed from the front (head).
 
-=> remove() - Returns and removes the head of the queue. Throws an exception
-if the queue is empty.
+==================================
+Methods of the Queue Interface
+==================================
 
-=> poll() - Removes and returns the head of the queue. Returns null if the
-queue is empty.
+The Queue interface inherits all methods from the Collection interface, since
+Collection is its superinterface.
+In addition, it provides several methods specifically designed for queue operations:
+
+add(E e) – Inserts the specified element into the queue.
+Returns true if successful; throws an exception if the queue is full.
+
+offer(E e) – Inserts the specified element into the queue.
+Returns true if successful; returns false if the queue is full.
+
+element() – Retrieves, but does not remove, the head of the queue.
+Throws an exception if the queue is empty.
+
+peek() – Retrieves, but does not remove, the head of the queue.
+Returns null if the queue is empty.
+
+remove() – Retrieves and removes the head of the queue.
+Throws an exception if the queue is empty.
+
+poll() – Retrieves and removes the head of the queue.
+Returns null if the queue is empty.
+
  */

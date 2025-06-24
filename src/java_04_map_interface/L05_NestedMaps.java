@@ -2,7 +2,7 @@ package java_04_map_interface;
 
 import java.util.*;
 
-public class L06_NestedMaps {
+public class L05_NestedMaps {
     public static void main(String[] args) {
 
         // ==========================
@@ -55,16 +55,16 @@ public class L06_NestedMaps {
 Example:
 
 {
-"Alex": {
-    "Hideout": "UAE",
-    "Permanent": "Florida",
-    "Postal": "Canada"
-},
-"Brian": {
-    "Hideout": "India",
-    "Permanent": "Alaska",
-    "Postal": "Canada"
-}
+    "Alex": {
+        "Hideout": "UAE",
+        "Permanent": "Florida",
+        "Postal": "Canada"
+    },
+    "Brian": {
+        "Hideout": "India",
+        "Permanent": "Alaska",
+        "Postal": "Canada"
+    }
 }
 
  */
